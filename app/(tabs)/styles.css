@@ -1,0 +1,146 @@
+import React from "react";
+import styled from "styled-components";
+
+const CatalogoSection = styled.section`
+    padding: 4rem 2rem;
+    background: #fff0f5;
+    text-align: center;
+`;
+
+const Title = styled.h2`
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color {b26e7d};
+    margin-bottom: 2rem;
+`;
+
+const ProdutosGrid = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+`;
+
+const Produto = styled.div`
+    background-color: #fff9fb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+`;
+
+const ProdutoImg = styled.img`
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+`;
+
+const ProdutoNome = styled.h3`
+    font-size: 1.4rem;
+    margin: 1rem 0 0.5rem;
+    color: #844c5b;
+    font-family: 'Playfair Display', serif;
+`;
+
+const ProdutoPreco = styled.p`
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #d96c8a;
+`;
+
+const App: React.FC = () => {
+    return (
+        <>
+            <html lang="pt-br">
+                <head>
+                    <meta charSet="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <title>Rare Touch</title>
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap"
+                        rel="stylesheet"
+                    />
+                </head>
+
+                <body>
+                    <header>
+                        <div className="logo" aria-label="Logo Rare Touch">Rare Touch</div>
+                        <nav>
+                            <ul>
+                                <li><a href="#inicio">Início</a></li>
+                                <li><a href="#produtos">Produtos</a></li>
+                                <li><a href="#sobre">Sobre</a></li>
+                                <li><a href="#contato">Contato</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+
+                    <main>
+                        <section className="hero" id="inicio">
+                            <h1>Cuide da sua pele com amor</h1>
+                            <p>Descubra nossa linha de produtos naturais e eficazes</p>
+                            <a href="#produtos" className="btn">Ver produtos</a>
+                        </section>
+
+                        <CatalogoSection id="produtos">
+                            <Title>Produtos em destaque</Title>
+                            <ProdutosGrid>
+                                <Produto>
+                                    <ProdutoImg
+                                        src="15601c43-d5c9-4562-8bbe-ad92978e71ef.png"
+                                        alt="Hidratante Facial"
+                                    />
+                                    <ProdutoNome>Hidratante Facial</ProdutoNome>
+                                    <ProdutoPreco>R$ 69,90</ProdutoPreco>
+                                </Produto>
+
+                                <Produto>
+                                    <ProdutoImg
+                                        src="b19f9a65-7e7c-42cd-90c5-410cd2c6cdf0.png"
+                                        alt="Sérum Vitamina C"
+                                    />
+                                    <ProdutoNome>Sérum Vitamina C</ProdutoNome>
+                                    <ProdutoPreco>R$ 89,90</ProdutoPreco>
+                                </Produto>
+
+                                <Produto>
+                                    <ProdutoImg
+                                        src="ea8936dc-092d-4cfe-b7c3-11631fdcff75.png"
+                                        alt="Máscara Facial"
+                                    />
+                                    <ProdutoNome>Máscara Facial</ProdutoNome>
+                                    <ProdutoPreco>R$ 79,90</ProdutoPreco>
+                                </Produto>
+                            </ProdutosGrid>
+                        </CatalogoSection>
+
+                        <section className="sobre" id="sobre">
+                            <h2>Sobre nós</h2>
+                            <p>
+                                A Rare Touch é uma marca dedicada ao cuidado com a pele, oferecendo
+                                produtos de alta qualidade e eficácia.
+                            </p>
+                        </section>
+
+                        <section className="contato" id="contato">
+                            <h2>Contato</h2>
+                            <p>Entre em contato conosco pelo email: contato@raretouch.com</p>
+                        </section>
+                    </main>
+
+                    <footer>
+                        <p>&copy; 2025 Rare Touch. Todos os direitos reservados.</p>
+                    </footer>
+                </body>
+            </html>
+        </>
+    );
+};
+
+export default App;

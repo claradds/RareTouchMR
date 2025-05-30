@@ -1,78 +1,89 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from "react";
+import "./styles.css";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+const App: React.FC = () => {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <html lang="pt-br">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rare Touch</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap"
+          rel="stylesheet"
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      </head>
+
+      <body>
+        <header>
+          <div className="logo" aria-label="Logo Rare Touch">Rare Touch</div>
+          <nav>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#produtos">Produtos</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <section className="hero" id="inicio">
+            <h1>Cuide da sua pele com amor</h1>
+            <p>Descubra nossa linha de produtos naturais e eficazes</p>
+            <a href="#produtos" className="btn">Ver produtos</a>
+          </section>
+
+          <section className="catalogo" id="produtos">
+            <h2>Produtos em destaque</h2>
+            <div className="produtos">
+              <div className="produto">
+                <img
+                  src="15601c43-d5c9-4562-8bbe-ad92978e71ef.png"
+                  alt="Hidratante Facial"
+                />
+                <h3>Hidratante Facial</h3>
+                <p>R$ 69,90</p>
+              </div>
+
+              <div className="produto">
+                <img
+                  src="b19f9a65-7e7c-42cd-90c5-410cd2c6cdf0.png"
+                  alt="Sérum Vitamina C"
+                />
+                <h3>Sérum Vitamina C</h3>
+                <p>R$ 89,90</p>
+              </div>
+
+              <div className="produto">
+                <img
+                  src="ea8936dc-092d-4cfe-b7c3-11631fdcff75.png"
+                  alt="Máscara Facial"
+                />
+                <h3>Máscara Facial</h3>
+                <p>R$ 79,90</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="sobre" id="sobre">
+            <h2>Sobre nós</h2>
+            <p>
+              A Rare Touch é uma marca dedicada ao cuidado com a pele, oferecendo
+              produtos de alta qualidade e eficácia.
+            </p>
+          </section>
+
+          <section className="contato" id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco pelo email: contato@raretouch.com</p>
+          </section>
+        </main>
+
+        <footer>
+          <p>&copy; 2025 Rare Touch. Todos os direitos reservados.</p>
+        </footer>
+      </body>
+    </html>
   );
-}
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
-
-
-
+};
