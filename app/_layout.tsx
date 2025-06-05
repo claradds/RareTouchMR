@@ -8,23 +8,22 @@ const products = [
   {
     id: '1',
     name: 'Hidratante Facial',
-    image: <img src="15601c43-d5c9-4562-8bbe-ad92978e71ef.png" alt="Hidratante Facial" style={{ width: '100%', height: '100%' }} />,
+    image: require('../assets/images/hidratantefacial.png'), // Caminho ajustado
     price: 'R$ 69,90',
   },
   {
     id: '2',
     name: 'Sérum Vitamina C',
-    image: 'https://via.placeholder.com/150',
+    image: require('../assets/images/serum.png'),
     price: 'R$ 89,90',
   },
   {
     id: '3',
     name: 'Máscara Facial',
-    image: 'https://via.placeholder.com/150',
+    image: require('../assets/images/mascarafacial.png'),
     price: 'R$ 79,90',
   },
 ];
-
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -53,14 +52,14 @@ const App: React.FC = () => {
       <View style={styles.catalogo}>
         <Text style={styles.catalogoTitle}>Produtos em destaque</Text>
         <ScrollView horizontal contentContainerStyle={styles.productsContainer}>
-          {products.map(product => (
-            <View key={product.id} style={styles.productCard}>
-              <Image source={{ uri: product.image }} style={styles.productImage} />
-              <Text style={styles.productName}>{product.name}</Text>
-              <Text style={styles.productPrice}>{product.price}</Text>
-            </View>
-          ))}
-        </ScrollView>
+  {products.map(product => (
+    <View key={product.id} style={styles.productCard}>
+      <Image source={product.image} style={styles.productImage} />
+      <Text style={styles.productName}>{product.name}</Text>
+      <Text style={styles.productPrice}>{product.price}</Text>
+    </View>
+  ))}
+</ScrollView>
       </View>
 
       {/* About Section */}
@@ -88,7 +87,7 @@ const App: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#CE9182', // Rosa bem suave (fundo)
+    backgroundColor: '#F6CFCA', // Rosa bem suave (fundo)
   },
   header: {
     backgroundColor: '#FFF', // Branco para o cabeçalho
@@ -102,9 +101,11 @@ const styles = StyleSheet.create({
     borderBottomColor: '#DCA1A1', // Rosa suave para a linha do cabeçalho
   },
   logo: {
+    
     fontSize: 30,
     fontWeight: '600',
-    color: '#CE9182', // Rosa suave para o logo
+    color: '#E77499', // Rosa suave para o logo 
+    fontFamily:'Tangerine',
   },
   nav: {
     flexDirection: 'row',
@@ -112,7 +113,8 @@ const styles = StyleSheet.create({
   navItem: {
     marginLeft: 20,
     fontSize: 16,
-    color: '#CE9182', // Rosa suave para os itens de navegação
+    color: '#E77499', // Rosa suave para os itens de navegação
+    fontFamily:'garamond',
   },
   hero: {
     backgroundColor: '#F6CFCA', // Rosa suave para o fundo da seção hero
@@ -126,12 +128,12 @@ const styles = StyleSheet.create({
   heroTitle: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#FFF', // Texto branco para contrastar com o fundo rosa
+    color: '#E77499', // Texto branco para contrastar com o fundo rosa
     marginBottom: 20,
   },
   heroDescription: {
     fontSize: 18,
-    color: '#FFF', // Texto branco para contrastar com o fundo rosa
+    color: '#E77499', // Texto branco para contrastar com o fundo rosa
     marginBottom: 30,
   },
   heroButton: {
@@ -142,7 +144,7 @@ const styles = StyleSheet.create({
   },
   heroButtonText: {
     fontSize: 18,
-    color: '#C16362', // Rosa suave para o texto do botão
+    color: '#E77499', // Rosa suave para o texto do botão
     fontWeight: 'bold',
   },
   catalogo: {
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
   catalogoTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: '#F472B6', // Rosa suave para o título do catálogo
+    color: '#E77499', // Rosa suave para o título do catálogo
     marginBottom: 20,
   },
   productsContainer: {
@@ -187,8 +189,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   productPrice: {
-    fontSize: 17,
-    color: '#FF80AB', // Rosa suave para o preço
+    fontSize: 18,
+    color: '#E77499', // Rosa suave para o preço
   },
   sobre: {
     padding: 40,
@@ -198,7 +200,7 @@ const styles = StyleSheet.create({
   sobreTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: '#F472B6', // Rosa suave para o título
+    color: '#E77499', // Rosa suave para o título
     marginBottom: 10,
   },
   sobreDescription: {
